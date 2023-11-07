@@ -66,7 +66,7 @@ const verifyToken = async (req, res, next) => {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     // 0. Creating collection in the database -> banner
     const bannerCollection = client.db('roomBooking').collection('banner');
@@ -74,11 +74,11 @@ async function run() {
     // 1. Creating collection in the database -> rooms
     const serviceCollection = client.db('roomBooking').collection('rooms');
 
-  //   // 4. Storing the bookings by users in another collection
-  //   const bookingCollection = client.db('roomBooking').collection('bookings');
+    // 4. Storing the bookings by users in another collection
+    const bookingCollection = client.db('roomBooking').collection('bookings');
     
-  //   // 5. Storing the bookings by users review in another collection
-  //   const reviewCollection = client.db('roomBooking').collection('reviews');
+    // 5. Storing the bookings by users review in another collection
+    const reviewCollection = client.db('roomBooking').collection('reviews');
 
   //   // 1. Getting all the banners data which we manually inserted to our 'roomBooking' database
   //   app.get('/banner', logger, async (req, res) => {
